@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: two-tier-app-service
+spec:
+  selector:
+    app: two-tier-app
+  ports:
+    - protocol: TCP
+      port: 80  # Internal Node port, container port traffic will be directed to this port 
+      targetPort: 5000 # Matches the containerPort of the Flask app
+      nodePort: 30005 # Node external port, we access our web app on this port
+  type: NodePort

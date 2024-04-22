@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: two-tier-app
+  labels:
+    app: two-tier-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: two-tier-app
+  template:
+    metadata:
+      labels:
+        app: two-tier-app
+    spec:
+      containers:
+        - name: two-tier-app-container
+          image: dushyantkumark/2-tier-flask-app:latest
+          env:
+            - name: MYSQL_HOST
+              value: "mysql"
+            - name: MYSQL_PASSWORD
+              value: "myadmin"
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_DB
+              value: "myDb"
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
