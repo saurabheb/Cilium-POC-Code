@@ -1,0 +1,28 @@
+sudo dnf -y install docker
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm 
+sudo rpm -Uvh minikube-latest.x86_64.rpm  
+sudo curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} 
+sudo sha256sum --check cilium-linux-amd64.tar.gz.sha256sum 
+sudo tar xzvfC cilium-linux-amd64.tar.gz /usr/local/bin  
+sudo minikube start --network-plugin=cni --force 
+sudo alias kubectl="minikube kubectl --" 
+alias kubectl="minikube kubectl --" 
+sudo sysctl fs.protected_regular=0  
+sudo cilium install
+sleep 120
+sudo cilium status >> /cilium.log
+sudo cilium connectivity test
+sudo cilium status >> /cilium.log1
+sudo cilium hubble enable
+sudo sysctl fs.protected_regular=0
+export HUBBLE_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/master/stable.txt)  
+curl -L --remote-name-all https://github.com/cilium/hubble/releases/download/$HUBBLE_VERSION/hubble-linux-amd64.tar.gz{,.sha256sum}  
+sudo tar xzvfC hubble-linux-amd64.tar.gz /usr/local/bin 
+sudo alias kubectl="minikube kubectl --" 
+cilium hubble enable --ui
+sudo minikube kubectl -- port-forward --namespace kube-system svc/hubble-relay 4245:80&
+sudo hubble status
+sudo alias kubectl="minikube kubectl --" 
+sudo minikube kubectl -- port-forward --namespace kube-system svc/hubble-ui 12000:80&
