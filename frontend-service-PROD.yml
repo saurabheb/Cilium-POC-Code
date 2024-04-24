@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: two-tier-app-service-PROD
+  name: two-tier-app-service-prod
 spec:
   selector:
-    app: two-tier-app-PROD
+    app: two-tier-app-prod
   ports:
     - protocol: TCP
       port: 80  # Internal Node port, container port traffic will be directed to this port 
