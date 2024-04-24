@@ -10,7 +10,7 @@ spec:
   ingress:
   - fromEndpoints:
     - matchLabels:
-        app: two-tier-app
+        app: two-tier-app-prod
     toPorts:
     - ports:
       - port: "3306"
