@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: two-tier-app
+  name: two-tier-app-UAT
   labels:
-    app: two-tier-app
+    app: two-tier-app-UAT
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: two-tier-app
+      app: two-tier-app-UAT
   template:
     metadata:
       labels:
-        app: two-tier-app
+        app: two-tier-app-UAT
     spec:
       containers:
-        - name: two-tier-app-container
+        - name: two-tier-app-container-UAT
           image: dushyantkumark/2-tier-flask-app:latest
           env:
             - name: MYSQL_HOST
