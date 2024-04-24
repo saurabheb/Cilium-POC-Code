@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: two-tier-app-container
-          image: saurabheb/my-demo:v1
+          image: dushyantkumark/2-tier-flask-app:latest
           env:
             - name: MYSQL_HOST
               value: "mysql"
