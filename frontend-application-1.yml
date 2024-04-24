@@ -1,17 +1,31 @@
-apiVersion: "cilium.io/v2"
-kind: CiliumNetworkPolicy
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: "rule1"
+  name: two-tier-app1
+  labels:
+    app: two-tier-app1
 spec:
-  description: "L3-L4 policy to restrict deathstar access to empire ships only"
-  endpointSelector:
+  replicas: 1
+  selector:
     matchLabels:
-      app: mysql
-  ingress:
-  - fromEndpoints:
-    - matchLabels:
-        app: two-tier-app
-    toPorts:
-    - ports:
-      - port: "3306"
-        protocol: TCP
+      app: two-tier-app1
+  template:
+    metadata:
+      labels:
+        app: two-tier-app1
+    spec:
+      containers:
+        - name: two-tier-app-container1
+          image: dushyantkumark/2-tier-flask-app:latest
+          env:
+            - name: MYSQL_HOST
+              value: "mysql"
+            - name: MYSQL_PASSWORD
+              value: "myadmin"
+            - name: MYSQL_USER
+              value: "root"
+            - name: MYSQL_DB
+              value: "myDb"
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
