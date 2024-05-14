@@ -9,7 +9,7 @@ Please ref the below documentation to get the details of Networking And Security
 
 1.2. Purpose of the Documentation. 
 
-Documentation for Cilium is to provide guidance and information to team members who are using or considering Cilium for networking and security in Kubernetes environments. 
+Documentation for Cilium is to provide guidance and information to the folks who are using or considering Cilium for networking and security in Kubernetes environments. 
 
 
 1.3 Target Audience. 
