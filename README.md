@@ -106,13 +106,15 @@ https://docs.cilium.io/en/stable/operations/system_requirements/
 
 Cilium will automatically detect and use the best configuration possible for the Kubernetes distribution we are using. All state is stored using Kubernetes custom resource definitions (CRDs).  
 
+```
 $cilium install 
-
+```
 Ref Document: https://docs.cilium.io/en/stable/gettingstarted/k8s-install-default/ 
 following command to validate that your cluster has proper network connectivity: 
 
+```
 $cilium connectivity test 
-
+```
  
 
 5. Project for Testing. 
@@ -125,6 +127,7 @@ In the demo project, we are not having UI available to show the communication as
 
 We are creating the Policy in such way that only pod with tag org:empire will be able to communicate Deathstar application. 
 
+```
 apiVersion: "cilium.io/v2" 
 kind: CiliumNetworkPolicy 
 metadata: 
@@ -143,12 +146,11 @@ spec:
     - ports: 
       - port: "80" 
         protocol: TCP 
-
- 
-
+```
  
 
 Ref Link : https://docs.cilium.io/en/stable/gettingstarted/demo/ 
+
 
 5.2. Two Tier Demo Project :  
 
