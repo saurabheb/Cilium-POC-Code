@@ -6,3 +6,4 @@ export HUBBLE_VERSION=$(curl -s https://raw.githubusercontent.com/cilium/hubble/
 curl -L --remote-name-all https://github.com/cilium/hubble/releases/download/$HUBBLE_VERSION/hubble-linux-amd64.tar.gz{,.sha256sum}  
 sudo tar xzvfC hubble-linux-amd64.tar.gz /usr/local/bin 
 cilium hubble enable -ui
+#cilium hubble ui
