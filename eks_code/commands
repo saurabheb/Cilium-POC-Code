@@ -8,3 +8,22 @@ sudo tar xzvfC hubble-linux-amd64.tar.gz /usr/local/bin
 cilium hubble enable -ui
 cilium hubble port-forward&
 #cilium hubble ui
+
+
+########################################
+#mysql query : 
+
+show databases;
+use myDb;
+
+CREATE TABLE messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    message TEXT
+);
+
+
+
+####################################
+username and password :
+user : admin
+pass : myadmin
