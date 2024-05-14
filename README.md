@@ -5,7 +5,7 @@ layout: Doc
 platform: AWS
 -->
 
-We can deploy the Cilium on Any K8s cluster as due to its wide support to identify the available cluster resources with version.In this repository you will get 2-3 way's to deploy the K8s Cluster as we have verfied the verified Cilium in various environment 
+We can deploy the Cilium on Any K8s cluster as due to its wide support to identify the available cluster resources with version.In this repository you will get 2-3 way's to deploy the K8s Cluster as we have verified Cilium in the various environment 
 
 
 Please ref the below documentation to get the details of Networking And Security Solution for Kubernetes (Cilium) 
