@@ -12,10 +12,9 @@ Please ref the below documentation to get the details of Networking And Security
 
 1. Introduction  
 
-1.1. Basic introduction of Cilium  
+1.1. Basic introduction of Cilium.
 
- 	Cilium is an open-source project to provide networking, security, and observability for cloud-native environments such as Kubernetes clusters and other container orchestration platforms. By leveraging the Power of eBPF(extended Berkeley Packet Filter) technology, Cilium offers unprecedented visibility, Security, and control over network traffic within Kubernetes clusters. 
-
+Cilium is an open-source project to provide networking, security, and observability for cloud-native environments such as Kubernetes clusters and other container orchestration platforms. By leveraging the Power of eBPF(extended Berkeley Packet Filter) technology, Cilium offers unprecedented visibility, Security, and control over network traffic within Kubernetes clusters.
 
 1.2. Purpose of the Documentation. 
 
