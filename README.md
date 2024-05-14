@@ -160,7 +160,7 @@ We have deployed the 2 Frontend UI and one backend SQL database.
 
 Let’s consider that our deployment team mistakenly deployed the UAT changes by providing the Prod variable but still it's not going to impact anything over backend MYSQL as its only accepting the communication from Pod that having env:prod.  
 
-
+```
 Policy: 
 
 apiVersion: "cilium.io/v2" 
@@ -181,7 +181,7 @@ spec:
       - port: "3306" 
         protocol: TCP 
 
-
+```
  
 
 6.0 Challenges faced during setup 
