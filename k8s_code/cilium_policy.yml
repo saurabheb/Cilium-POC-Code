@@ -12,6 +12,12 @@ spec:
     - matchLabels:
         app: two-tier-app-prod
     toPorts:
-    - ports:
+    - ports:                     #Layer3
       - port: "3306"
         protocol: TCP
+#      rules:                     #Layer7
+#        http:
+#        - method: "POST"
+#          path: "*"
+#        - method: "GET"
+#          path: "*"
