@@ -1,0 +1,27 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: cncf-cluster12
+  region: us-east-1
+
+vpc:
+  id: vpc-04cf20fd4d2e80d54
+  subnets:
+    public:
+      us-east-1d: { id: subnet-050aac4744a716754 }
+      us-east-1b: { id: subnet-066c942cd0ef3b5a1 }
+
+managedNodeGroups:
+- name: ng-1
+  instanceType: t3.medium
+  desiredCapacity: 2
+  privateNetworking: false
+  taints:
+   - key: "node.cilium.io/agent-not-ready"
+     value: "true"
+     effect: "NoExecute"
+  iam:
+    withAddonPolicies:
+      imageBuilder: true
+      ebs: true
+      albingress: true
