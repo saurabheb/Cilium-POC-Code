@@ -1,0 +1,4 @@
+sudo cilium install
+cilium hubble enable -ui
+cilium hubble port-forward&
+cilium hubble ui
