@@ -200,5 +200,4 @@ spec:
 
 Lack of Documentation available over internet: 
 
-We have reviewed the available resources over internet on Cilium and started collecting the details and implemented it by failing multiple times. 
-During the project tenure, we have received the good support from the Cilium Community on documentation and resolution of errors. 
+During the project tenure,Received the good support from the Cilium Community on documentation and resolution of errors. 
